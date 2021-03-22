@@ -5,12 +5,18 @@ import { HomeComponent } from './home/home.component';
 import { MsalGuard } from '@azure/msal-angular';
 import { DetailComponent } from './detail/detail.component';
 import { FailedComponent } from './failed/failed.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
     canActivate: [MsalGuard]
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent,
+    //canActivate: [MsalGuard]
   },
   {
     path: 'profile',
@@ -22,8 +28,8 @@ const routes: Routes = [
       }
     ]
   },
-  { 
-    path: 'lazyLoad', 
+  {
+    path: 'lazyLoad',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule),
     canLoad: [MsalGuard]
   },

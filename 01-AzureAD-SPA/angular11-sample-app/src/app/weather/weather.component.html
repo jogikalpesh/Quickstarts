@@ -1,0 +1,16 @@
+<p>weather works!</p>
+
+<table border="true">
+    <tr>
+       <th>Date</th>
+       <th>Temp. Celcius</th>
+       <th>Temp. farenheit</th>
+       <th>Summary</th>
+    </tr>
+    <tr *ngFor = "let temperature of temperatures">
+        <td>{{temperature.date | date:'short'}}</td>
+        <td>{{temperature.temperatureC}}</td>
+        <td>{{temperature.temperatureF}}</td>
+        <td>{{temperature.summary}}</td>
+    </tr>
+</table>
