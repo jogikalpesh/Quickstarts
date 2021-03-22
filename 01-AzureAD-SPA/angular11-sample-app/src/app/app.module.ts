@@ -25,10 +25,10 @@ export function loggerCallback(logLevel: LogLevel, message: string) {
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      clientId: '35cf9790-0ba2-4916-b348-032d308a3e99',
+      clientId: '35cf9790-0ba2-4916-b348-032d308a3e99', //<-- change this
       redirectUri: '/',
       postLogoutRedirectUri: '/',
-      authority: "https://login.microsoftonline.com/1372c663-c4a5-4eef-8e1e-8af9c94ff77a"
+      authority: "https://login.microsoftonline.com/1372c663-c4a5-4eef-8e1e-8af9c94ff77a" //<-- change this
     },
     cache: {
       cacheLocation: BrowserCacheLocation.LocalStorage,
@@ -47,7 +47,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
   protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
-  protectedResourceMap.set('https://app-webapi.azurewebsites.net',['api://webapi.techlearning.com/generic']);
+  protectedResourceMap.set('https://app-webapi.azurewebsites.net',['api://webapi.techlearning.com/generic']); //<-- change this
 
   return {
     interactionType: InteractionType.Redirect,
